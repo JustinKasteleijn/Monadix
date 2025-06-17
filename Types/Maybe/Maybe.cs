@@ -39,6 +39,7 @@ namespace Monadix.Types.Maybe
                 {
                     Just<A>(var x) => f(x),
                     Nothing<A> => new Nothing<B>(),
+                    _ => throw new NotSupportedException("C# does not support discriminated union types."),
                 };
     }
 }
