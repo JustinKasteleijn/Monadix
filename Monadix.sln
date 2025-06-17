@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35122.118
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monadix", "Monadix.csproj", "{4AF1029B-0FE6-4DC6-8677-778A62F417F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonadixTest", "..\MonadixTest\MonadixTest.csproj", "{AFA2E8BA-9991-4CCD-94DF-A8D3FDFD6ED6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4AF1029B-0FE6-4DC6-8677-778A62F417F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AF1029B-0FE6-4DC6-8677-778A62F417F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AF1029B-0FE6-4DC6-8677-778A62F417F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AF1029B-0FE6-4DC6-8677-778A62F417F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFA2E8BA-9991-4CCD-94DF-A8D3FDFD6ED6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFA2E8BA-9991-4CCD-94DF-A8D3FDFD6ED6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFA2E8BA-9991-4CCD-94DF-A8D3FDFD6ED6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFA2E8BA-9991-4CCD-94DF-A8D3FDFD6ED6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6F09D778-DD5C-42DE-8979-417227E12F84}
+	EndGlobalSection
+EndGlobal
