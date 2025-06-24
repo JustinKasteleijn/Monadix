@@ -1,5 +1,6 @@
 ﻿using Monadix.Kind;
 using Monadix.TypeClasses.Functional;
+using Monadix.TypeClasses.Functional.Foldable;
 
 namespace Monadix.Types.Maybe
 {
@@ -8,7 +9,8 @@ namespace Monadix.Types.Maybe
     public record Nothing<A>() : Maybe<A>;
 
     public class Maybe
-        : Monad<Maybe>
+        : Monad<Maybe>,
+        Foldable<Maybe>
     {
         public static Kind<Maybe, B> Fmap<A, B>(Func<A, B> f, Kind<Maybe, A> mx)
             => mx switch
@@ -41,5 +43,16 @@ namespace Monadix.Types.Maybe
                     Nothing<A> => new Nothing<B>(),
                     _ => throw new NotSupportedException("C# does not support discriminated union types."),
                 };
+
+        public static S Foldr<A, S>(Kind<Maybe, A> ma, S initial, Func<S, A, S> f)
+            => ma switch
+            {
+                Just<A>(var x) => f(initial, x),
+                Nothing<A> => initial,
+                _ => throw new NotSupportedException("C# does not support discriminated union types."),
+            };
+
+        public static S Foldl<A, S>(Kind<Maybe, A> ma, S initial, Func<S, A, S> f)
+            => Foldr(ma, initial, f);
     }
 }

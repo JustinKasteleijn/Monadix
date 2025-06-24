@@ -2,6 +2,6 @@
 {
     public interface Magma<A>
     {
-        static abstract A Concat (A a, A b);
+        public static abstract A Concat (A a, A b);
     }
 }
