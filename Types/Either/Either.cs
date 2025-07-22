@@ -73,9 +73,11 @@ namespace Monadix.Types.Either
             try
             {
                 return new Right<Exception, T>(f());
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 return new Left<Exception, T>(ex);
             }
+        }
     }
 }

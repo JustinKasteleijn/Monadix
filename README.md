@@ -16,11 +16,31 @@ Inspired by Haskell and Scala, Monadix enables expressive, composable, and pure 
 
 ---
 
+## 📖 Documentation
+
+The library is currently under active development, and documentation will be added as features stabilize.
+
+---
+
+## Target Audience 
+
+The software is primarily intended to enhance understanding of functional programming concepts in C#, with a focus on Category Theory principles. 
+Usage of the software for any production purposes is not recommended due to its experimental nature.
+
+---
+
 ## 📦 Installation
 
 > 🚧 **Note:** Monadix is a work-in-progress and currently intended for learning, experimentation, or advanced FP-in-C# projects.
 
 ```bash
-# Not yet published — clone manually for now
+dotnet add package Monadix --version 1.0.0
+```
+
+Alternitevly you can clone the repository directly:
+
+```bash
 git clone https://github.com/yourusername/monadix.git
 cd monadix
+```
+
