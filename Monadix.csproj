@@ -4,6 +4,78 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title>Monadix</Title>
+    <Description>Monadix is a functional programming library for C# that brings advanced type system features like higher-kinded types, type classes, and functional abstractions such as Functor, Applicative, Monad, and Foldable to the .NET ecosystem.
+
+It draws inspiration from languages like Haskell and Scala, enabling expressive and composable functional code in a statically typed, object-oriented environment.
+
+## 🚀 First Release 🎉
+
+This first release includes support for the following foundational abstractions:
+
+### 🔧 Functional Type Classes
+- [`Functor`](#functor) — map over structure
+- [`Applicative`](#applicative) — lift and apply functions inside context
+- [`Monad`](#monad) — chain operations with effects
+- [`Traversable`](#traversable) — traverse and sequence effects
+
+### 🔣 Algebraic Structures
+- [`Magma`](#magma) — binary operation
+- [`Semigroup`](#semigroup) — associative combination
+- [`Monoid`](#monoid) — identity and associative combination
+
+All abstractions use a **higher-kinded type encoding** (`Kind&lt;F, A&gt;`) to simulate parametric polymorphism over type constructors in C#.
+
+
+✨ Key Features
+✅ Emulates higher-kinded types (Kind&lt;F, A&gt;) via generic encoding
+✅ Defines type classes using static interfaces and extensions (e.g. Functor&lt;F&gt;, Monad&lt;F&gt;)
+✅ Provides implementations of core functional patterns: map, bind, fold, traverse, etc.
+✅ Encourages pure functional design with explicit effects and algebraic abstractions
+✅ Easily extensible with your own data types and instances</Description>
+    <PackageProjectUrl>https://github.com/JustinKasteleijn/Monadix/</PackageProjectUrl>
+    <PackageIcon>1000_F_205961667_Al872696l0vYdHXo23wbc4gPrZ25pehq.jpg</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/JustinKasteleijn/Monadix/</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>FP; Functional Programming; Monads; Learning; Traversable; Functor; Category Theory</PackageTags>
+    <PackageReleaseNotes>## 🚀 First Release 🎉
+
+This first release includes support for the following foundational abstractions:
+
+### 🔧 Functional Type Classes
+- [`Functor`](#functor) — map over structure
+- [`Applicative`](#applicative) — lift and apply functions inside context
+- [`Monad`](#monad) — chain operations with effects
+- [`Traversable`](#traversable) — traverse and sequence effects
+
+### 🔣 Algebraic Structures
+- [`Magma`](#magma) — binary operation
+- [`Semigroup`](#semigroup) — associative combination
+- [`Monoid`](#monoid) — identity and associative combination
+
+All abstractions use a **higher-kinded type encoding** (`Kind&lt;F, A&gt;`) to simulate parametric polymorphism over type constructors in C#.
+</PackageReleaseNotes>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\Downloads\1000_F_205961667_Al872696l0vYdHXo23wbc4gPrZ25pehq.jpg">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="LICENSE.txt">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>

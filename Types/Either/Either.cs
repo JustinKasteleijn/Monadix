@@ -1,5 +1,6 @@
 ﻿using Monadix.Kind;
 using Monadix.TypeClasses.Functional;
+using Monadix.TypeClasses.Functional.Foldable;
 
 namespace Monadix.Types.Either
 {
@@ -8,7 +9,8 @@ namespace Monadix.Types.Either
     public record Right<L, R>(R Value) : Either<L, R>;
 
     public class Either<L>
-        : Monad<Either<L>>
+        : Monad<Either<L>>,
+        Foldable<Either<L>>
     {
         public static Kind<Either<L>, B> Fmap<A, B>(Func<A, B> f, Kind<Either<L>, A> ex)
         {
@@ -44,6 +46,7 @@ namespace Monadix.Types.Either
                 _ => throw new NotSupportedException("C# does not support discriminated union types."),
             };
 
+<<<<<<< HEAD
         public static Kind<Either<L>, A> OrElse<A>(Kind<Either<L>, A> mx, Func<A, bool> pred, Kind<Either<L>, A> my)
             => mx switch
             {
@@ -53,5 +56,18 @@ namespace Monadix.Types.Either
                     : my,
                 _ => throw new NotSupportedException("C# does not support discriminated union types."),
             };
+=======
+        public static S Foldr<A, S>(Kind<Either<L>, A> ma, S initial, Func<S, A, S> f)
+            => ma switch
+            {
+                Left<L, A> => initial,
+                Right<L, A>(var r) => f(initial, r),
+                _ => throw new NotSupportedException("C# does not support discriminated union types."),
+            };
+
+        public static S Foldl<A, S>(Kind<Either<L>, A> ma, S initial, Func<S, A, S> f)
+            => Either<L>.Foldr(ma, initial, f);
+
+>>>>>>> 74ca6c8468cff79a9050b9f2437a8567bfc70f52
     }
 }

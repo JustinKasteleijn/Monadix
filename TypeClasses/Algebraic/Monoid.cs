@@ -3,6 +3,6 @@
     public interface Monoid<A>
         : Semigroup<A>
     {
-        static abstract A Empty();
+        public static abstract A Empty();
     }
 }
