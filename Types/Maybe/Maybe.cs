@@ -54,5 +54,16 @@ namespace Monadix.Types.Maybe
 
         public static S Foldl<A, S>(Kind<Maybe, A> ma, S initial, Func<S, A, S> f)
             => Foldr(ma, initial, f);
+
+        public static Kind<Maybe, A> Try<A>(Func<A> f)
+        {
+            try
+            {
+                return new Just<A>(f());
+            } catch (Exception)
+            {
+                return new Nothing<A>();
+            }
+        }
     }
 }

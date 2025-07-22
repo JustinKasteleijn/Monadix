@@ -1,11 +1,6 @@
 ﻿using Monadix.Kind;
 using Monadix.TypeClasses.Algebraic;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Monadix.TypeClasses.Functional.Foldable
 {
