@@ -14,8 +14,8 @@ namespace Monadix.Types.Either
         {
             return ex switch
             {
-                Right<L, A> (var r) => new Right<L, B>(f(r)),
-                Left<L, A> (var l) => new Left<L, B>(l),
+                Right<L, A>(var r) => new Right<L, B>(f(r)),
+                Left<L, A>(var l) => new Left<L, B>(l),
                 _ => throw new NotSupportedException("C# does not support discriminated union types."),
             };
         }
@@ -44,5 +44,14 @@ namespace Monadix.Types.Either
                 _ => throw new NotSupportedException("C# does not support discriminated union types."),
             };
 
+        public static Kind<Either<L>, A> OrElse<A>(Kind<Either<L>, A> mx, Func<A, bool> pred, Kind<Either<L>, A> my)
+            => mx switch
+            {
+                Left<L, A> lx => lx,
+                Right<L, A> rx => pred(rx.Value)
+                    ? rx
+                    : my,
+                _ => throw new NotSupportedException("C# does not support discriminated union types."),
+            };
     }
 }
